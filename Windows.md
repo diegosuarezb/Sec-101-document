@@ -62,3 +62,12 @@ findstr /i "THM" access.log
   ```cmd
   echo tryhackme >> passwords.txt
   ```
+| Command / Tool | Description | Usage Example |
+| :--- | :--- | :--- |
+| **`systeminfo`** / **`ver`** | Check operating system version and details. | `systeminfo` |
+| **`hostname`** | Display the hostname of the Windows machine. | `hostname` |
+| **`ipconfig /all`** | Look up network adapters, IP addresses, and MAC/physical addresses. | `ipconfig /all` |
+| **`tasklist`** | List running processes (useful with filters like `/FI`). | `tasklist /FI "imagename eq Notepad.exe"` |
+| **`taskkill`** | Terminate a running process by PID or image name. | `taskkill /PID 1516` |
+| **`shutdown /r`** / **`/a`** | Restart a system (`/r`) or abort a scheduled shutdown (`/a`). | `shutdown /r` |
+  
