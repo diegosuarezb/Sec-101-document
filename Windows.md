@@ -1,0 +1,64 @@
+# 🪟 Windows CLI Basics (SEC101)
+
+> [!NOTE]
+> Cheatsheet with essential Windows command-line navigation and file interaction equivalents to Linux for TryHackMe.
+
+---
+
+## 1. Terminal Basics & User Info
+
+| Command | Description | Usage Example |
+| :--- | :--- | :--- |
+| **`echo`** | Simply outputs any text you give it on the screen. | `echo TryHackMe` |
+| **`whoami`** | Tells you the username of the account you are currently logged in as. | `whoami` |
+
+---
+
+## 2. Interacting with the Filesystem
+
+* **`dir`** — List the contents of a directory (folders and files) *(equivalent to `ls`)*.
+* **`type`** — Output the contents of a file directly to the terminal *(equivalent to `cat`)*.
+* **`cd`** — Change the current working directory or print current path if used alone.
+* **`cd /d`** — Change directory and drive at the same time (e.g., `cd /d D:\folder`).
+
+```cmd
+:: Quick navigation workflow example in Windows CMD:
+dir
+cd folder4
+cd
+type note.txt
+```
+
+---
+
+## 3. Searching for Files
+
+### 🔍 `dir /s` (Search files by name)
+Allows you to search for files recursively across directories using wildcards (`*`).
+```cmd
+dir /s passwords.txt
+dir /s *.txt
+```
+
+### 📄 `findstr` (Search text inside files)
+Searches inside files for specific text content, patterns, or strings (Windows equivalent to `grep`).
+```cmd
+findstr /i "81.143.211.90" access.log
+findstr /i "THM" access.log
+```
+
+---
+
+## 4. Shell Operators & Redirection
+
+> [!TIP]
+> Just like in Linux, mastering these operators saves time when managing output and automation in Windows scripts.
+
+* **`>`** *(Output Redirection)*: Overwrite the **entire** contents of a file with new output.
+  ```cmd
+  echo password123 > passwords.txt
+  ```
+* **`>>`** *(Append Operator)*: Add text to the **end** of an existing file without deleting its previous contents.
+  ```cmd
+  echo tryhackme >> passwords.txt
+  ```
