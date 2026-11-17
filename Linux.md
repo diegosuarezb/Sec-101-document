@@ -63,3 +63,12 @@ grep "THM" access.log
   ```bash
   echo tryhackme >> passwords
   ```
+
+  ## 5. Linux Shells & Utilities
+
+| Command / Utility | Description | Usage Example |
+| :--- | :--- | :--- |
+| **`ls`** | List contents of a directory (files and folders). | `ls -la` |
+| **`grep`** | Search for patterns or strings inside files or logs. | `grep "thm-flag" /var/log/auth.log` |
+| **`history`** | Display previously executed commands in the current session. | `history` |
+| **`chmod +x`** | Grant executable permissions to a script file. | `chmod +x script.sh` |
