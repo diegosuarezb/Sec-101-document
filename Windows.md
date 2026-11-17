@@ -49,7 +49,7 @@ findstr /i "THM" access.log
 
 ---
 
-## 4. Shell Operators & Redirection
+##  Shell Operators & Redirection
 
 > [!TIP]
 > Just like in Linux, mastering these operators saves time when managing output and automation in Windows scripts.
@@ -71,3 +71,18 @@ findstr /i "THM" access.log
 | **`taskkill`** | Terminate a running process by PID or image name. | `taskkill /PID 1516` |
 | **`shutdown /r`** / **`/a`** | Restart a system (`/r`) or abort a scheduled shutdown (`/a`). | `shutdown /r` |
   
+##  Windows PowerShell Essentials
+
+| Cmdlet / Command | Description | Usage Example |
+| :--- | :--- | :--- |
+| **`Get-Command`** | Retrieve a list of available commands matching a pattern. | `Get-Command -Name *Remove*` |
+| **`Get-Help`** | Show documentation, examples, and usage help for cmdlets. | `Get-Help New-LocalUser -Examples` |
+| **`Get-Content`** | Read and display the content of a file (PowerShell alternative to `type`/`cat`). | `Get-Content C:\Treasure\Hunt\flag.txt` |
+| **`Get-ChildItem`** | List items in a directory (PowerShell alternative to `dir`/`ls`). | `Get-ChildItem -Path C:\Users` |
+| **`Get-FileHash`** | Calculate cryptographic hashes for files. | `Get-FileHash C:\Users\user\file.txt` |
+| **`Invoke-Command`** | Run commands on a remote computer. | `Invoke-Command -ComputerName Target -ScriptBlock {Get-Service}` |
+
+```powershell
+# Quick PowerShell filtering example (finding items > 100 bytes):
+Get-ChildItem | Where-Object -Property Length -gt 100
+```
